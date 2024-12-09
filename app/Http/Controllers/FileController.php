@@ -17,4 +17,11 @@ class FileController extends Controller
         // abort(404, 'File not found');
         return response("Error! No invoice provided", 404);
     }
+
+    function download2(){
+        return response()->file("romel.png");
+    }
+    function download3(){
+        return response()->download("romel.png");
+    }
 }
