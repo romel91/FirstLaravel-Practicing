@@ -36,10 +36,18 @@ class TaskController extends Controller
 
     function index() {
         // return response()->json($this->tasks);
-        $totalTask = count($this->tasks);
-        return view('tasks.alltasks', ['name' => 'john Doe', 'total'=> $totalTask]);
+        // $name = 'john Doe';
+        // $total = count($this->tasks);
+        // return view('tasks.alltasks', ['name' => $name, 'total'=> $total]); //ways to show view
+        // return view('tasks.alltasks', compact('name', 'total')); //ways to show view
+        return view('tasks.alltasks', ['tasks' => $this->tasks]);
+        
+
     }
     function showTasks() {
-        return view('tasks.alltasks');
+        $name = 'john Doe';
+        $total = count($this->tasks);
+        // $newTotal = $total * 100;
+        // return view('tasks.alltasks', compact('name', 'total', 'newTotal'));
     }
 }

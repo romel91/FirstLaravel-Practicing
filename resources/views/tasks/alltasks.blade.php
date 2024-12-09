@@ -7,7 +7,19 @@
 </head>
 <body>
     <h1>This is all tasks view</h1>
-    <h2>Name: {{ $name }}</h2>
-    <h2>Total Task: {{ $total }}</h2>
+    {{--<h2>Name: {{ $name }}</h2>--}}
+    {{--<h2>Total Task: {{ $total*100 }}</h2>--}}
+
+    {{-- <h2>New Total: {{ $newTotal }}</h2> --}}
+
+    {{--$tasks[0]['title']--}}
+    @if (isset($tasks))
+
+        @foreach ($tasks as $task)
+            <h2>{{ $task['id'] }}</h2>
+        @endforeach
+    
+    @endif
+
 </body>
 </html>
