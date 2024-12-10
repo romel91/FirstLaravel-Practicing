@@ -21,5 +21,10 @@
     
     @endif
 
+    <script>
+        const tasks = @json($tasks);
+        console.log(tasks);
+    </script>
+
 </body>
 </html>
