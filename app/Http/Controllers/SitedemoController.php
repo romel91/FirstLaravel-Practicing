@@ -16,5 +16,8 @@ class SitedemoController extends Controller
         return view('site.about');
         
     }
+    function reservations() {
+        return view('site.reservation');
+    }
 
 }

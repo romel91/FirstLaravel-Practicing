@@ -23,3 +23,4 @@ Route::get('/tasks/showTasks' , [TaskController::class , 'showTasks']);
 Route::get('/' , [SitedemoController::class , 'home']);
 Route::get('/menu' , [SitedemoController::class , 'menu']);
 Route::get('/about' , [SitedemoController::class , 'about']);
+Route::get('/reservations' , [SitedemoController::class , 'reservations']);
