@@ -4,10 +4,14 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MiddlewaretestController;
 use App\Http\Middleware\SimpleMiddleware;
-
+use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('posts', PostController::class);//resource route for post controller with all the methods in the controller class 
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -32,3 +36,5 @@ Route::middleware('auth')->group(function () {
 Route::get('/download', [MiddlewaretestController::class, 'downloadFile'])->middleware('throttle:2,1');//throttle is built in middleware in laravel
 
 Route::get('/message', [MiddlewaretestController::class, 'simpleMessage'])->middleware(SimpleMiddleware::class);
+
+Route::get('/bd', [MiddlewaretestController::class, 'contentForBD']);

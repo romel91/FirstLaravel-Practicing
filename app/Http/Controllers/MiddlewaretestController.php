@@ -39,4 +39,12 @@ class MiddlewaretestController extends Controller
             'message' => 'This is a simple message'
         ]);
     }
+
+    function contentForBD(Request $request){
+        $headers = $request->headers->all();
+        return response()->json([
+            'message' => 'You can only see this content from Bangladesh',
+            'headers' => $headers
+        ]);
+    }
 }
